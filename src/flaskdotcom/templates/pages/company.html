@@ -5,13 +5,8 @@
 {% endblock title %}
 
 {% block content %}
-    <div class="list-group shadow-sm mb-4">
-        <div class="mb-2 mt-3 p-3">
-            <h2 class="display-6">
-                FlaskDotCom
-            </h2>
-        </div>
 
+    <div class="list-group">
         {% for company in pagination.companies %}
             <div class="list-group-item list-group-item-action d-flex align-items-center">
                 <span class="badge bg-secondary rounded-pill me-4">
@@ -36,10 +31,10 @@
     </div>
 
     {% if pagination.total_pages > 1 %}
-        <nav aria-label="Page navigation">
+        <nav aria-label="Page navigation" class="mt-3">
             <ul class="pagination justify-content-center">
                 <li class="page-item {% if not pagination.has_prev %}disabled{% endif %}">
-                    <a class="page-link bg-secondary text-white border-secondary"
+                    <a class="page-link bg-secondary text-white"
                        href="{{ url_for('company.company_list', requested_page=pagination.current_page - 1, per_page=pagination.per_page) if pagination.has_prev else '#' }}">
                         前へ
                     </a>
@@ -58,7 +53,7 @@
                 {% endfor %}
 
                 <li class="page-item {% if not pagination.has_next %}disabled{% endif %}">
-                    <a class="page-link bg-secondary text-white border-secondary"
+                    <a class="page-link bg-secondary text-white"
                        href="{{ url_for('company.company_list', requested_page=pagination.current_page + 1, per_page=pagination.per_page) if pagination.has_next else '#' }}">
                         次へ
                     </a>
@@ -66,10 +61,8 @@
             </ul>
         </nav>
     {% endif %}
+    <div class="card-body d-flex justify-content-center mb-0">
+        <span>全{{ pagination.total_items }}件</span>
+</div>
 
-    <div class="card-body d-flex justify-content-center">
-        <p class="mb-0">
-            <span>全 {{ pagination.total_items }} 件</span>
-        </p>
-    </div>
 {% endblock content %}

@@ -21,13 +21,6 @@
             main {
                 flex: 1;
             }
-
-            footer {
-                background-color: #3a3f44;
-                border-top: 1px solid #8a929a;
-                padding: 20px 0;
-                margin-top: 30px;
-            }
         </style>
     </head>
 
@@ -36,28 +29,24 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url_for('company.company_list') }}">
-                        SSR-LESSON
+                        <h3 class="display-6">
+                            FlaskDotCom
+                        </h2>
                     </a>
-                    <button class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
                 </div>
             </nav>
         </header>
 
         <main>
-            <div class="container mt-1">
+            <div class="container py-3">
                 {% block content %}
                 {% endblock content %}
             </div>
         </main>
 
-        <footer class="mt-3">
+        <footer class="mt-0 py-3 bg-dark">
             <div class="container text-center">
-                <p class="text-muted small mb-0">
+                <p class="text-light small mb-0">
                     &copy; 2026 FlaskDotCom By Shiori Takanashi
                 </p>
             </div>
