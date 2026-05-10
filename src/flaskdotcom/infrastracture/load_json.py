@@ -13,10 +13,10 @@ def get_json() -> Path:
 
 
 def get_data_from_json() -> list:
-    try:
-        with open(get_json(), encoding="utf-8") as f:
-            data = json.load(f)
-        if isinstance(data, list):
-            return data
-    except Exception as e:
-        raise e
+    with open(get_json(), encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not isinstance(data, list):
+        raise TypeError("JSONの最上位はlistである必要がある")
+
+    return data
