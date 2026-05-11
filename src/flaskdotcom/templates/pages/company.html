@@ -9,11 +9,11 @@
     <div class="list-group">
         {% for company in pagination.companies %}
             <div class="list-group-item list-group-item-action d-flex align-items-center">
-                <span class="badge bg-secondary rounded-pill me-4">
+                <span class="badge bg-secondary rounded-pill me-2 flex-shrink-0">
                     ID: {{ company.index }}
                 </span>
 
-                <span class="fw-bold me-4 text-truncate flex-shrink-0 col-6 col-md-3">
+                <span class="fw-bold me-2 text-truncate flex-grow-1 flex-lg-grow-0 col-lg-4">
                     {{ company.name }}
                 </span>
 
