@@ -85,10 +85,7 @@ htmls: djl-modify djh-modify djl-verify
 # deploy
 # ==========================================
 
-export-reqs:
-    uv export --no-emit-project --no-hashes --format requirements.txt -o requirements.txt
-
-gcp-deploy: export-reqs
+deploy:
     gcloud run deploy snkflask-app \
       --source . \
       --region asia-northeast1 \

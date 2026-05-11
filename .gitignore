@@ -49,3 +49,4 @@ Thumbs.db
 .trees/
 tools/
 .ci_cache/
+tree.txt
