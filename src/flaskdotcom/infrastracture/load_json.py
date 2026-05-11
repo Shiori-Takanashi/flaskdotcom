@@ -6,7 +6,7 @@ from flaskdotcom.utils.root import find_project_root
 
 def get_json() -> Path:
     root = find_project_root()
-    p = root / "data" / "all_company.json"
+    p = root / "data" / "companies.json"
     if not p.exists():
         raise FileExistsError("JSONが見つかりません。")
     return p
