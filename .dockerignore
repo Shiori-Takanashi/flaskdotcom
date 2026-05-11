@@ -5,3 +5,4 @@ __pycache__
 .env
 .ci_cache
 .docs
+tree.txt
