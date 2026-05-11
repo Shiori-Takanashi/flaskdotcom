@@ -51,3 +51,4 @@ tools/
 .ci_cache/
 tree.txt
 scripts/
+.vscode/
