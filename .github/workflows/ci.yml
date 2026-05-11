@@ -43,20 +43,20 @@ jobs:
         run: |
           mkdir -p .ci_cache/.pytest_reports
           uv run pytest \
-            --junitxml=.ci_cache/.pytest_reports/report.xml \
+            --junitxml=report.xml \
             --cov=flaskdotcom \
-            --cov-report=xml:.ci_cache/.pytest_reports/coverage.xml
+            --cov-report=xml:coverage.xml
 
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v6
         if: success() || failure()
         with:
-          report_paths: ".ci_cache/.pytest_reports/report.xml"
+          report_paths: "report.xml"
 
       - name: Upload Coverage Report
         uses: actions/upload-artifact@v7
         if: always()
         with:
           name: coverage-xml
-          path: .ci_cache/.pytest_reports/coverage.xml
+          path: coverage.xml
           if-no-files-found: error
